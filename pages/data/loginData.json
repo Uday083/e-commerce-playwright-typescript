@@ -1,0 +1,12 @@
+
+{   
+    "_comment": "valid Login",
+    "user":"standard_user",
+    "password":"secret_sauce" 
+}
+
+{
+    "_comment": "invalid Login",
+    "user":"locked_out_user",        
+    "password":"secret_sauce"
+}

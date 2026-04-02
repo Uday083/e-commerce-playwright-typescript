@@ -1,0 +1,1 @@
+//This page includes the elements of the Checkout overview page which comes after the Checkout info page. Scenario includes verification of the products added to the cart vs products present in the checkout page.

@@ -1,0 +1,1 @@
+//This page includes the elements of User information collected such as first name, last name, postal code, etc. and scenarios of right information, wrong information, and empty information, etc.

@@ -1,0 +1,1 @@
+//This page includes the confirmation of the product checkout and button to navigate back to Home page.
