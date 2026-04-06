@@ -4,19 +4,24 @@ import {TestConfig} from '../test.config';
 import {LoginPage} from '../pages/Login.ts';
 import {Home} from '../pages/HomePage.ts';
 
-test('Login to SauceLabs', async ({ page }) => {
-   const config = new TestConfig();  //import all the variables from test.config.ts file
-    
-   await page.goto(config.appUrl);  //Open browser and navigate to URL
-    
+test('Verify the Login Page', async ({ page }) => {
+
+    const config = new TestConfig();  //import all the variables from test.config.ts file    
+    await page.goto(config.appUrl);  //Open browser and navigate to URL
     const login = new   LoginPage(page);  //Create an instance of the Login page
-    
     await login.isPageExist();  //Check if the login page is opened successfully
-    
+
+});
+
+test('Verify the Home page', async ({ page }) => {
+
+    const config = new TestConfig();
+    await page.goto(config.appUrl);  //Open browser and navigate to URL
+    const login = new   LoginPage(page);  //Create an instance of the Login page
+    await login.isPageExist();  //Check if the login page is opened successfully
+
     await login.loginToApp(config.user, config.password);  //Perform login action with username and password from config 
     
     const homePage = new Home(page);  //Create an instance of the Home page
-   
     await homePage.isPageExist();  //Check if the home page is opened successfully after login
-    
 });
