@@ -10,6 +10,7 @@ export class Home {
     private readonly cartIcon: Locator
     private readonly twitterIcon: Locator;
     private readonly facebookIcon: Locator;
+    private readonly logoutButton: Locator;
     //constructor
     constructor(page: Page) {
         this.page = page;
@@ -18,6 +19,7 @@ export class Home {
         this.cartIcon = page.locator('.shopping_cart_link');
         this.twitterIcon = page.locator('.social_twitter');
         this.facebookIcon = page.locator('.social_facebook');
+        this.logoutButton = page.locator('#logout_sidebar_link');
     }
     //Action methods
     async isPageExist(){
@@ -29,4 +31,16 @@ export class Home {
         else{            return false;
         }
     }
-}
+    async clickHamburgerMenu(){
+        await this.hamburgerMenu.click();
+    }
+    async clickFilterButton(){
+        await this.filterButton.click();
+    }
+    async clickCartIcon(){
+        await this.cartIcon.click();
+    }
+    async clickLogoutButton(){
+        await this.logoutButton.click();
+    }
+    }
