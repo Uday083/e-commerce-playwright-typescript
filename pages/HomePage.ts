@@ -3,7 +3,8 @@
 import { Page, expect, Locator } from '@playwright/test';
 export class Home {
 
-    private readonly page: Page;    
+    private readonly page: Page; 
+       
     //locators
     private readonly hamburgerMenu: Locator;
     private readonly filterButton: Locator;
@@ -11,6 +12,7 @@ export class Home {
     private readonly twitterIcon: Locator;
     private readonly facebookIcon: Locator;
     private readonly logoutButton: Locator;
+
     //constructor
     constructor(page: Page) {
         this.page = page;

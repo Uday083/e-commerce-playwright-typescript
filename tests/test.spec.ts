@@ -3,6 +3,7 @@ import { test, expect, type Page } from '@playwright/test';
 import {TestConfig} from '../test.config';
 import {LoginPage} from '../pages/Login.ts';
 import {Home} from '../pages/HomePage.ts';
+import { ProductList } from '../pages/ProductList.ts';
 
 test.describe.serial('Start test',() => {
     let page: Page;
@@ -16,8 +17,6 @@ test.describe.serial('Start test',() => {
         login = new LoginPage(page);
         const config = new TestConfig();  //import all the variables from test.config.ts file    
         await page.goto(config.appUrl);  
-       // await page.pause();
-         
     });
 
     test('Open the application URL and verify the login page is opened successfully', async () => {
@@ -33,6 +32,11 @@ test.describe.serial('Start test',() => {
         const homePage = new Home(page);  //Create an instance of the Home page
         await homePage.isPageExist();//Check if the home page is opened successfully after login    
         console.log("Home page is opened successfully");
+    });
+
+    test("Verify the products are displayed in the product list page", async () => {
+        const productList = new ProductList(page);
+        await productList.productsExist(); //Check if the products are displayed in the product list page
     });
 
     test("Verify the hamburger option", async () => {
